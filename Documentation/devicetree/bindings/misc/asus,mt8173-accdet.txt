@@ -1,0 +1,30 @@
+MT8173 headset detection driver
+
+Required properties:
+- compatible: asus,mt8173-accdet
+- interrupt-parent: should be the phandle for the interrupt controller
+- interrupts: Should contain interrupt number of jack detection
+- gpios: list of gpio phandles to get headset state
+
+Optional properties:
+- pinctrl-names: initialize pin state for interruption
+- headset-mode-setting: define debounce time in mt6391 pmic accdet
+- headset-four-key-threshold: define four voltage threshold to detect four key buttons
+- accdet_voltage_mode: select accdet voltage mode(0:1.9V, 1:2.8V)
+
+Example:
+
+asus_mt8173_accdet {
+	compatible = "asus,mt8173-accdet";
+	interrupt-parent = <&pio>;
+	interrupts = <97 IRQ_TYPE_EDGE_RISING>,
+		    <37 IRQ_TYPE_EDGE_FALLING>;
+	gpios = <&pio 97 0>,
+		<&pio 37 0>;
+	pinctrl-names = "uart-default", "jack-default";
+	pinctrl-0 = <&uart_int_pin_default>;
+	pinctrl-1 = <&jack_int_pin_default>;
+	headset-mode-setting = <0x100 0x100 1 0x1F0 0x200 0x200 0x20>;
+	headset-four-key-threshold = <0 59 128 192 350>;
+	accdet_voltage_mode = <0>;
+}

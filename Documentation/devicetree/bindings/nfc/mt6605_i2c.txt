@@ -1,0 +1,17 @@
+Bindings for nfc connected to I2C lines
+
+Required properties:
+- compatible : "mediatek,nfc"
+
+Examples:
+
+static struct i2c_driver mt6605_dev_driver = {
+	.id_table = mt6605_id,
+	.probe = mt6605_probe,
+	.remove = mt6605_remove,
+	.driver = {
+		   .name = "mt6605",
+		   .owner = THIS_MODULE,
+		   .of_match_table = nfc_switch_of_match,
+		   },
+};

@@ -1,0 +1,10 @@
+config MTK_PERFMGR_TOUCH_BOOST
+	tristate "touch boost in performance manager"
+	default n
+	help
+	  touch boost in performance manager
+
+config MTK_FLIPER
+	bool "enable emi bandwidth kicker for vcore dvfs"
+	help
+	  Say y here to enable emi bandiwidth kicker for vcore dvfs

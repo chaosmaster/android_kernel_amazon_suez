@@ -1,0 +1,4 @@
+config MTK_ETM
+        bool "Support For Embedded Trace Macrocell"
+        default y
+        help

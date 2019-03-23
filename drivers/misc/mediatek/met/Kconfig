@@ -1,0 +1,21 @@
+menu "MET"
+
+config MTK_MET
+	tristate "MET core driver"
+	default n
+	---help---
+	  The core module of MTK MET profiling tool.
+	  We can use the config to define MET core driver.
+	  It's depend on MTK_FTRACE
+
+config MTK_MET_PLF
+	tristate "MET platform-related driver"
+	depends on MTK_MET
+	default n
+	---help---
+	  The platform module of MTK MET profiling tool.
+	  We can use the config to define MET platform driver.
+	  It's depend on MTK_MET
+
+endmenu
+

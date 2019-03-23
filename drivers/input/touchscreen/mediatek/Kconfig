@@ -1,0 +1,61 @@
+#
+# Touchscreen driver configuration
+#
+menuconfig INPUT_TOUCHSCREEN
+	bool "Touchscreens"
+	help
+	  Say Y here, and a list of supported touchscreens will be displayed.
+	  This option doesn't affect the kernel.
+
+	  If unsure, say Y.
+
+if INPUT_TOUCHSCREEN
+
+config TOUCHSCREEN_MTK
+	bool "MediaTek Touch Panel Driver"
+	help
+	  Say Y here if you have MediaTek touch panel.
+
+	  If unsure, say N.
+
+	  To compile this dirver as a module, choose M here: the
+	  module will be called.
+
+config TOUCHSCREEN_MTK_FT5726
+	tristate "FT5726 Touchscreen"
+	help
+	  Say Y here if you have FT5726 touchscreen,
+	  connected to your system.
+          To compile this dirver as a module, choose M here: the
+          module will be called.
+
+config SHOW_TOUCH_VENDOR
+	tristate "FT5726 show touch vendor"
+	help
+	  Say Y here if FT5726 have show touch vendor feature,
+	  connected to your system.
+          To compile this dirver as a module, choose M here: the
+          module will be called.
+
+config TOUCHSCREEN_MTK_SYNAPTICS_I2C_RMI4
+	tristate "Synaptics DSX I2C touchscreen"
+	depends on I2C
+	help
+	  Say Y here if you have a Synaptics DSX I2C touchscreen
+	  connected to your system.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called synaptics_i2c_rmi4.
+
+source "drivers/input/touchscreen/mediatek/synaptics_i2c_rmi4/Kconfig"
+
+config TOUCHSCREEN_GESTURE_WAKEUP
+	bool "Touch Screen Gesture Wakeup support"
+	default n
+	help
+	  Say Y here if you support Touch Screen Gesture Wakeup
+	  If unsure, say N.
+
+endif

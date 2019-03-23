@@ -1,0 +1,34 @@
+config SND_SOC_MT8173
+    tristate
+
+config SND_SOC_MT8173_MT6391_MACH
+    tristate "ASoC Audio driver for MT8173 with MT6391 codec"
+    depends on ARCH_MT8173
+    select SND_SOC_MT8173
+    select SND_SOC_MT6391
+    help
+        This adds audio driver for MT8173 platform with the MT6391 audio codec.
+
+config SND_SOC_MT8173_MT6391_abc123_MACH
+    tristate "ASoC Audio driver for MT8173 abc123 board"
+    depends on ARCH_MT8173
+    select SND_SOC_MT8173
+    select SND_SOC_MT6391
+    help
+        This adds audio driver for MT8173 abc123 board
+        with the MT6391 audio codec.
+        It depends on ARCH_MT8173.
+        Select Y to include related drivers.
+
+config SND_SOC_MT8173_MT6391_SUEZ_MACH
+    tristate "ASoC Audio driver for MT8173 Suez board"
+    depends on ARCH_MT8173 && I2C
+    select SND_SOC_MT8173
+    select SND_SOC_MT6391
+    select SND_SOC_RT5514
+    help
+        This adds audio driver for MT8173 Suez board
+        with the MT6391 audio codec.
+        It depends on ARCH_MT8173.
+        Select Y to include related drivers.
+

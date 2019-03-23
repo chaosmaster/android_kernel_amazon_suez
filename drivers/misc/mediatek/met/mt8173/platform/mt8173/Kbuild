@@ -1,0 +1,25 @@
+$(info .............................)
+$(info MET_TOP=$(MET_TOP))
+$(info CONFIG_MTK_MET_PLF=$(CONFIG_MTK_MET_PLF))
+
+ifeq ($(MET_TOP),)
+	obj-$(CONFIG_MTK_MET_PLF) := met_plf.o
+else
+	obj-m := met_plf.o
+endif
+
+ccflags-y += $(EXTRA_ARGS)
+
+met_plf-y := plf_init.o \
+	plf_trace.o \
+	emi.o mt_emi_bm.o \
+	cci400_pmu.o cci400_pmu_hw.o \
+	thermal.o \
+	mt_gpu_metmonitor.o
+
+
+$(info obj-y=$(obj-y))
+$(info obj-m=$(obj-m))
+$(info met_plf-y=$(met_plf-y))
+
+$(info .............................)

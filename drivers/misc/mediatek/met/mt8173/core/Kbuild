@@ -1,0 +1,27 @@
+$(info -----------------------------)
+$(info Start to build MET core)
+
+ccflags-y := -DMET_USER_EVENT_SUPPORT
+
+$(info MET_TOP=$(MET_TOP))
+$(info CONFIG_MTK_MET=$(CONFIG_MTK_MET))
+ifeq ($(MET_TOP),)
+	obj-$(CONFIG_MTK_MET) := met.o
+else
+	obj-m := met.o
+endif
+
+met-y := met_main.o interface.o sampler.o \
+	util.o  stat.o  cookie.o cpu_pmu.o
+
+met-y += v8_pmu_hw.o
+
+met-y += met_tag.o
+
+met-$(CONFIG_CPU_FREQ) += power.o
+
+$(info obj-y=$(obj-y))
+$(info obj-m=$(obj-m))
+$(info met-y=$(met-y))
+
+$(info -----------------------------)

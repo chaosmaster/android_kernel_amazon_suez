@@ -1,0 +1,129 @@
+config MTK_ACCDET
+	depends on !ASUS_MTK_ACCDET
+	tristate "MediaTek ACCDET driver"
+	---help---
+
+	  ACCDET driver support for MediaTek SOC
+
+	  If you want to use MediaTek ACCDET driver,
+	  say Y or M here.
+
+	  If unsure, say N.
+
+config ACCDET_EINT
+	depends on MTK_ACCDET
+	tristate "MediaTek ACCDET driver"
+	---help---
+
+	  ACCDET EINT support for MediaTek SOC
+
+	  If you want to use MediaTek ACCDET EINT from PMIC ACCDET itself,
+	  say Y or M here.
+
+	  If unsure, say N.
+
+config ACCDET_EINT_IRQ
+	depends on MTK_ACCDET
+	tristate "MediaTek ACCDET driver"
+	---help---
+
+	  ACCDET EINT support for MediaTek SOC
+
+	  If you want to use MediaTek ACCDET EINT from AP GPIO,
+	  say Y or M here.
+
+	  If unsure, say N.
+
+config ACCDET_PIN_SWAP
+	depends on MTK_ACCDET
+	tristate "MediaTek ACCDET driver"
+	---help---
+
+	  ACCDET_PIN_SWAP support for MediaTek SOC
+
+	  If you want to use MediaTek ACCDET PIN SWAP,
+	  say Y or M here.
+
+	  If unsure, say N.
+
+config ACCDET_PIN_RECOGNIZATION
+	depends on MTK_ACCDET
+	tristate "MediaTek ACCDET driver"
+	---help---
+
+	  ACCDET_PIN_RECOGNIZATION support for MediaTek SOC
+
+	  If you want to use MediaTek ACCDET PIN RECOGNIZATION,
+	  say Y or M here.
+
+	  If unsure, say N.
+
+config FOUR_KEY_HEADSET
+	depends on MTK_ACCDET
+	tristate "MediaTek ACCDET driver"
+	---help---
+
+	  FOUR_KEY_HEADSET support for MediaTek SOC
+
+	  If you want to use MediaTek ACCDET four key headset,
+	  say Y or M here.
+
+	  If unsure, say N.
+
+config HEADSET_SUPPORT_FIVE_POLE
+	depends on MTK_ACCDET
+	tristate "MediaTek ACCDET driver"
+	---help---
+
+	  HEADSET_SUPPORT_FIVE_POLE support for MediaTek SOC
+
+	  If you want to use MediaTek ACCDET five pole headset,
+	  say Y or M here.
+
+	  If unsure, say N.
+
+config TS3A225E_ACCDET
+	depends on MTK_ACCDET
+	tristate "MediaTek ACCDET driver"
+	---help---
+
+	  TS3A225E support for MediaTek SOC
+
+	  If you want to use TS3A225E
+	  say Y or M here.
+
+	  If unsure, say N.
+
+config ACCDET_TO_UART
+	tristate "MediaTek ACCDET driver"
+	---help---
+
+	  ACCDET_TO_UART support for MediaTek SOC
+
+	  If you want to use MediaTek ACCDET to uart
+	  say Y or M here.
+
+	  If unsure, say N.
+
+config ASUS_MT8173_ACCDET
+	depends on !MTK_ACCDET
+	tristate "Asus MT8173 Accdet driver"
+	---help---
+
+	MT8173 Accdet driver support for MediaTek SOC
+
+	If you want to use Asus MT8173 Accdet driver,
+	say Y or M here.
+
+	If unsure, say N.
+
+config ACCDET_OMTP_CTIA_SWITCH
+	tristate "MediaTek ACCDET driver"
+	---help---
+
+	Switch IC - support for MediaTek SOC
+
+	If you want to use CTIA/OMTP Switch IC,
+	say Y or M here.
+
+	If unsure, say N.

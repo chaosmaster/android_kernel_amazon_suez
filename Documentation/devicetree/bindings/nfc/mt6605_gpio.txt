@@ -1,0 +1,16 @@
+Bindings for nfc connected to I2C lines
+
+Required properties:
+- compatible : "mediatek,nfc-gpio-v2"
+
+Examples:
+
+static struct platform_driver mtk_nfc_platform_driver = {
+	.probe = mt_nfc_probe,
+	.remove = mt_nfc_remove,
+	.driver = {
+		   .name = I2C_ID_NAME,
+		   .owner = THIS_MODULE,
+		   .of_match_table = nfc_dev_of_match,
+		   },
+};
