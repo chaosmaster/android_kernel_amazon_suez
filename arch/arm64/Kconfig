@@ -367,6 +367,8 @@ config ARCH_MT8173
 	select MTK_BASE_POWER
 	select MTK_SYS_CIRQ
 	select MTK_GIC_EXT
+	select HAVE_ARCH_MMAP_RND_BITS
+	select HAVE_ARCH_MMAP_RND_COMPAT_BITS
 	help
 	  This enable support for MediaTek MT8173. If you need support
 	  for MediaTek MT8173, say Y here.
